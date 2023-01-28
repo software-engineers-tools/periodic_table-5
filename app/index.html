@@ -1,811 +1,998 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml" lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta property="og:image" content="http://periodic-table.co/assets/img/screenshot3.jpg"/>
-        <title>Periodic table</title>
-        <meta name="viewport" content="initial-scale=1" />
-        <meta name="description" content="Interactive periodic table with expandable information on all elements.">
-        <!-- build:css assets/css/screen.min.css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/screen.css?v=2" media="screen">
-        <!-- /build -->
-    </head>
-    <body>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"
+	lang="en">
 
-        <div id="container">
-        	<div class="navigation-container">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta property="og:image" content="http://periodic-table.co/assets/img/screenshot3.jpg" />
+	<title>Periodic table</title>
+	<meta name="viewport" content="initial-scale=1" />
+	<meta name="description" content="Interactive periodic table with expandable information on all elements.">
+	<!-- build:css assets/css/screen.min.css -->
+	<link rel="stylesheet" type="text/css" href="assets/css/screen.css" media="screen">
+	<!-- /build -->
+	<style>
+		.text {
+			font-size: 8px;
+			margin: 4px;
+			margin-top: -3px
+		}
 
-                <div class="centered navigation-container-inner" id="navigation-container-inner">
-            		<ol id="main-nav" class="nav-collapse">
-            			<li class="PageSelected"><a href="/">Periodic Table</a></li>
-            			<li><a href="about.html">About</a></li>
-            			<li><a href="https://github.com/sean-dunwoody/periodic-table">Download</a></li>
-            		</ol>
+		.head {
+			font-size: 20px;
+			margin-left: 10px;
+		}
+	</style>
+</head>
 
-                    <a href="#" id="element-close">Close all open elements</a>
-                </div>
+<body>
 
-        	</div>
+	<div id="container">
+		<div class="navigation-container">
 
-        	<div id="wrapper" class="centered">
+			<div class="centered navigation-container-inner" id="navigation-container-inner">
+				<ol id="main-nav" class="nav-collapse">
+					<li class="PageSelected"><a href="/">Periodic Table</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="https://github.com/sean-dunwoody/periodic-table">Download</a></li>
+				</ol>
 
-            	<table class="periodic-table" id="periodic-table">
-                    <thead>
-                    	<tr>
-                        	<th></th>
-                        	<th>1</th>
-                        	<th>2</th>
-                        	<th>3</th>
-                        	<th>4</th>
-                        	<th>5</th>
-                        	<th>6</th>
-                        	<th>7</th>
-                        	<th>8</th>
-                        	<th>9</th>
-                        	<th>10</th>
-                        	<th>11</th>
-                        	<th>12</th>
-                        	<th>13</th>
-                        	<th>14</th>
-                        	<th>15</th>
-                        	<th>16</th>
-                        	<th>17</th>
-                        	<th>18</th>
-                        </tr>
-                    </thead>
-                	<tr>
-                    	<th>1</th>
-                    	<td class="el non-metal" id="1">
-                        	<span class="atomic-number">1</span>
-                            <span class="heading">H</span>
-                            <span class="heading-full">Hydrogen</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    	<td class="el noble-gas" id="2">
-                        	<span class="atomic-number">2</span>
-                        	<span class="heading">He</span>
-                            <span class="heading-full">Helium</span>
-                        </td>
-                    </tr>
-                	<tr>
-                    	<th>2</th>
-                    	<td class="el alkali-metal" id="3">
-                        	<span class="atomic-number">3</span>
-                        	<span class="heading">Li</span>
-                            <span class="heading-full">Lithium</span>
-                        </td>
-                    	<td class="el alkali-earth-metal" id="4">
-                        	<span class="atomic-number">4</span>
-                        	<span class="heading">Be</span>
-                            <span class="heading-full">Beryllium</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    	<td class="el metalloid" id="5">
-                        	<span class="atomic-number">5</span>
-                        	<span class="heading">B</span>
-                            <span class="heading-full">Boron</span>
-                        </td>
-                    	<td class="el non-metal" id="6">
-                        	<span class="atomic-number">6</span>
-                        	<span class="heading">C</span>
-                            <span class="heading-full">Carbon</span>
-                        </td>
-                    	<td class="el non-metal" id="7">
-                        	<span class="atomic-number">7</span>
-                        	<span class="heading">N</span>
-                            <span class="heading-full">Nitrogen</span>
-                        </td>
-                    	<td class="el non-metal" id="8">
-                        	<span class="atomic-number">8</span>
-                        	<span class="heading">O</span>
-                            <span class="heading-full">Oxygen</span>
-                        </td>
-                    	<td class="el halogen" id="9">
-                        	<span class="atomic-number">9</span>
-                        	<span class="heading">F</span>
-                            <span class="heading-full">Fluorine</span>
-                        </td>
-                    	<td class="el noble-gas" id="10">
-                        	<span class="atomic-number">10</span>
-                        	<span class="heading">Ne</span>
-                            <span class="heading-full">Neon</span>
-                        </td>
-                    </tr>
-                	<tr>
-                    	<th>3</th>
-                    	<td class="el alkali-metal" id="11">
-                        	<span class="atomic-number">11</span>
-                        	<span class="heading">Na</span>
-                            <span class="heading-full">Sodium</span>
-                        </td>
-                    	<td class="el alkali-earth-metal" id="12">
-                        	<span class="atomic-number">12</span>
-                        	<span class="heading">Mg</span>
-                            <span class="heading-full">Magnesium</span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    	<td class="el post-transition-metal" id="13">
-                        	<span class="atomic-number">13</span>
-                        	<span class="heading">Al</span>
-                            <span class="heading-full">Aluminium</span>
-                        </td>
-                    	<td class="el metalloid" id="14">
-                        	<span class="atomic-number">14</span>
-                        	<span class="heading">Si</span>
-                            <span class="heading-full">Silicon</span>
-                        </td>
-                    	<td class="el non-metal" id="15">
-                        	<span class="atomic-number">15</span>
-                        	<span class="heading">P</span>
-                            <span class="heading-full">Phosphorus</span>
-                        </td>
-                    	<td class="el non-metal" id="16">
-                        	<span class="atomic-number">16</span>
-                        	<span class="heading">S</span>
-                            <span class="heading-full">Sulfur</span>
-                        </td>
-                    	<td class="el halogen" id="17">
-                        	<span class="atomic-number">17</span>
-                        	<span class="heading">Cl</span>
-                            <span class="heading-full">Chlorine</span>
-                        </td>
-                    	<td class="el noble-gas" id="18">
-                        	<span class="atomic-number">18</span>
-                        	<span class="heading">Ar</span>
-                            <span class="heading-full">Argon</span>
-                       </td>
-                    </tr>
-                	<tr>
-                    	<th>4</th>
-                    	<td class="el alkali-metal" id="19">
-                        	<span class="atomic-number">19</span>
-                        	<span class="heading">K</span>
-                            <span class="heading-full">Potassium</span>
-                        </td>
-                    	<td class="el alkali-earth-metal" id="20">
-                        	<span class="atomic-number">20</span>
-                        	<span class="heading">Ca</span>
-                            <span class="heading-full">Calcium</span>
-                        </td>
-                    	<td class="el transition-metal" id="21">
-                        	<span class="atomic-number">21</span>
-                        	<span class="heading">Sc</span>
-                            <span class="heading-full">Scandium</span>
-                        </td>
-                    	<td class="el transition-metal" id="22">
-                        	<span class="atomic-number">22</span>
-                        	<span class="heading">Ti</span>
-                            <span class="heading-full">Titanium</span>
-                        </td>
-                    	<td class="el transition-metal" id="23">
-                        	<span class="atomic-number">23</span>
-                        	<span class="heading">V</span>
-                            <span class="heading-full">Vanadium</span>
-                        </td>
-                    	<td class="el transition-metal" id="24">
-                        	<span class="atomic-number">24</span>
-                        	<span class="heading">Cr</span>
-                            <span class="heading-full">Chromium</span>
-                        </td>
-                    	<td class="el transition-metal" id="25">
-                        	<span class="atomic-number">25</span>
-                        	<span class="heading">Mn</span>
-                            <span class="heading-full">Manganese</span>
-                        </td>
-                    	<td class="el transition-metal" id="26">
-                        	<span class="atomic-number">26</span>
-                        	<span class="heading">Fe</span>
-                            <span class="heading-full">Iron</span>
-                        </td>
-                    	<td class="el transition-metal" id="27">
-                        	<span class="atomic-number">27</span>
-                        	<span class="heading">Co</span>
-                            <span class="heading-full">Cobalt</span>
-                        </td>
-                    	<td class="el transition-metal" id="28">
-                        	<span class="atomic-number">28</span>
-                        	<span class="heading">Ni</span>
-                            <span class="heading-full">Nickel</span>
-                        </td>
-                    	<td class="el transition-metal" id="29">
-                        	<span class="atomic-number">29</span>
-                        	<span class="heading">Cu</span>
-                            <span class="heading-full">Copper</span>
-                        </td>
-                    	<td class="el transition-metal" id="30">
-                        	<span class="atomic-number">30</span>
-                        	<span class="heading">Zn</span>
-                            <span class="heading-full">Zinc</span>
-                        </td>
-                    	<td class="el post-transition-metal" id="31">
-                        	<span class="atomic-number">31</span>
-                        	<span class="heading">Ga</span>
-                            <span class="heading-full">Gallium</span>
-                        </td>
-                    	<td class="el metalloid" id="32">
-                        	<span class="atomic-number">32</span>
-                        	<span class="heading">Ge</span>
-                            <span class="heading-full">Germanium</span>
-                        </td>
-                    	<td class="el metalloid" id="33">
-                        	<span class="atomic-number">33</span>
-                        	<span class="heading">As</span>
-                            <span class="heading-full">Arsenic</span>
-                        </td>
-                    	<td class="el non-metal" id="34">
-                        	<span class="atomic-number">34</span>
-                        	<span class="heading">Se</span>
-                            <span class="heading-full">Selenium</span>
-                        </td>
-                    	<td class="el halogen" id="35">
-                        	<span class="atomic-number">35</span>
-                        	<span class="heading">Br</span>
-                            <span class="heading-full">Bromine</span>
-                        </td>
-                    	<td class="el noble-gas" id="36">
-                        	<span class="atomic-number">36</span>
-                        	<span class="heading">Kr</span>
-                            <span class="heading-full">Krypton</span>
-                        </td>
-                    </tr>
-                	<tr>
-                    	<th>5</th>
-                    	<td class="el alkali-metal" id="37">
-                        	<span class="atomic-number">37</span>
-                        	<span class="heading">Rb</span>
-                            <span class="heading-full">Rubidium</span>
-                        </td>
-                    	<td class="el alkali-earth-metal" id="38">
-                        	<span class="atomic-number">38</span>
-                        	<span class="heading">Sr</span>
-                            <span class="heading-full">Strontium</span>
-                        </td>
-                    	<td class="el transition-metal" id="39">
-                        	<span class="atomic-number">39</span>
-                        	<span class="heading">Y</span>
-                            <span class="heading-full">Yttrium</span>
-                        </td>
-                    	<td class="el transition-metal" id="40">
-                        	<span class="atomic-number">40</span>
-                        	<span class="heading">Zr</span>
-                            <span class="heading-full">Zirconium</span>
-                        </td>
-                    	<td class="el transition-metal" id="41">
-                        	<span class="atomic-number">41</span>
-                        	<span class="heading">Nb</span>
-                            <span class="heading-full">Niobium</span>
-                        </td>
-                    	<td class="el transition-metal" id="42">
-                        	<span class="atomic-number">42</span>
-                        	<span class="heading">Mo</span>
-                            <span class="heading-full">Molybdenum</span>
-                        </td>
-                    	<td class="el transition-metal" id="43">
-                        	<span class="atomic-number">43</span>
-                        	<span class="heading">Tc</span>
-                            <span class="heading-full">Technetium</span>
-                        </td>
-                    	<td class="el transition-metal" id="44">
-                        	<span class="atomic-number">44</span>
-                        	<span class="heading">Ru</span>
-                            <span class="heading-full">Ruthenium</span>
-                        </td>
-                    	<td class="el transition-metal" id="45">
-                        	<span class="atomic-number">45</span>
-                        	<span class="heading">Rh</span>
-                            <span class="heading-full">Rhodium</span>
-                        </td>
-                    	<td class="el transition-metal" id="46">
-                        	<span class="atomic-number">46</span>
-                        	<span class="heading">Pd</span>
-                            <span class="heading-full">Palladium</span>
-                        </td>
-                    	<td class="el transition-metal" id="47">
-                        	<span class="atomic-number">47</span>
-                        	<span class="heading">Ag</span>
-                            <span class="heading-full">Silver</span>
-                        </td>
-                    	<td class="el transition-metal" id="48">
-                        	<span class="atomic-number">48</span>
-                        	<span class="heading">Cd</span>
-                            <span class="heading-full">Cadmium</span>
-                        </td>
-                    	<td class="el post-transition-metal" id="49">
-                        	<span class="atomic-number">49</span>
-                        	<span class="heading">In</span>
-                            <span class="heading-full">Indium</span>
-                        </td>
-                    	<td class="el post-transition-metal" id="50">
-                        	<span class="atomic-number">50</span>
-                        	<span class="heading">Sn</span>
-                            <span class="heading-full">Tin</span>
-                        </td>
-                    	<td class="el metalloid" id="51">
-                        	<span class="atomic-number">51</span>
-                        	<span class="heading">Sb</span>
-                            <span class="heading-full">Antimony</span>
-                        </td>
-                    	<td class="el metalloid" id="52">
-                        	<span class="atomic-number">52</span>
-                        	<span class="heading">Te</span>
-                            <span class="heading-full">Tellurium</span>
-                        </td>
-                    	<td class="el halogen" id="53">
-                        	<span class="atomic-number">53</span>
-                        	<span class="heading">I</span>
-                            <span class="heading-full">Iodine</span>
-                        </td>
-                    	<td class="el noble-gas" id="54">
-                        	<span class="atomic-number">54</span>
-                        	<span class="heading">Xe</span>
-                            <span class="heading-full">Xenon</span>
-                        </td>
-                    </tr>
-                	<tr>
-                    	<th>6</th>
-                    	<td class="el alkali-metal" id="55">
-                        	<span class="atomic-number">55</span>
-                        	<span class="heading">Cs</span>
-                            <span class="heading-full">Caesium</span>
-                        </td>
-                    	<td class="el alkali-earth-metal" id="56">
-                        	<span class="atomic-number">56</span>
-                        	<span class="heading">Ba</span>
-                            <span class="heading-full">Barium</span>
-                        </td>
-                    	<td class="el lathanide">
-                        	<span class="atomic-number">57-71</span>
-                        	<span class="heading"></span>
-                        </td>
-                    	<td class="el transition-metal" id="72">
-                        	<span class="atomic-number">72</span>
-                        	<span class="heading">Hf</span>
-                            <span class="heading-full">Hafnium</span>
-                        </td>
-                    	<td class="el transition-metal" id="73">
-                        	<span class="atomic-number">73</span>
-                        	<span class="heading">Ta</span>
-                            <span class="heading-full">Tantalum</span>
-                        </td>
-                    	<td class="el transition-metal" id="74">
-                        	<span class="atomic-number">74</span>
-                        	<span class="heading">W</span>
-                            <span class="heading-full">Tungsten</span>
-                        </td>
-                    	<td class="el transition-metal" id="75">
-                        	<span class="atomic-number">75</span>
-                        	<span class="heading">Re</span>
-                            <span class="heading-full">Rhenium</span>
-                        </td>
-                    	<td class="el transition-metal" id="76">
-                        	<span class="atomic-number">76</span>
-                        	<span class="heading">Os</span>
-                            <span class="heading-full">Osmium</span>
-                        </td>
-                    	<td class="el transition-metal" id="77">
-                        	<span class="atomic-number">77</span>
-                        	<span class="heading">Ir</span>
-                            <span class="heading-full">Iridium</span>
-                        </td>
-                    	<td class="el transition-metal" id="78">
-                        	<span class="atomic-number">78</span>
-                        	<span class="heading">Pt</span>
-                            <span class="heading-full">Platinum</span>
-                        </td>
-                    	<td class="el transition-metal" id="79">
-                        	<span class="atomic-number">79</span>
-                        	<span class="heading">Au</span>
-                            <span class="heading-full">Gold</span>
-                        </td>
-                    	<td class="el transition-metal" id="80">
-                        	<span class="atomic-number">80</span>
-                        	<span class="heading">Hg</span>
-                            <span class="heading-full">Mercury</span>
-                        </td>
-                    	<td class="el post-transition-metal" id="81">
-                        	<span class="atomic-number">81</span>
-                        	<span class="heading">Tl</span>
-                            <span class="heading-full">Thallium</span>
-                        </td>
-                    	<td class="el post-transition-metal" id="82">
-                        	<span class="atomic-number">82</span>
-                        	<span class="heading">Pb</span>
-                            <span class="heading-full">Lead</span>
-                        </td>
-                    	<td class="el post-transition-metal" id="83">
-                        	<span class="atomic-number">83</span>
-                        	<span class="heading">Bi</span>
-                            <span class="heading-full">Bismuth</span>
-                        </td>
-                    	<td class="el metalloid" id="84">
-                        	<span class="atomic-number">84</span>
-                        	<span class="heading">Po</span>
-                            <span class="heading-full">Polonium</span>
-                        </td>
-                    	<td class="el halogen" id="85">
-                        	<span class="atomic-number">85</span>
-                        	<span class="heading">At</span>
-                            <span class="heading-full">Astatine</span>
-                        </td>
-                    	<td class="el noble-gas" id="86">
-                        	<span class="atomic-number">86</span>
-                        	<span class="heading">Rn</span>
-                            <span class="heading-full">Radon</span>
-                        </td>
-                    </tr>
-                	<tr>
-                    	<th>7</th>
-                    	<td class="el alkali-metal" id="87">
-                        	<span class="atomic-number">87</span>
-                        	<span class="heading">Fr</span>
-                            <span class="heading-full">Francium</span>
-                        </td>
-                    	<td class="el alkali-earth-metal" id="88">
-                        	<span class="atomic-number">88</span>
-                        	<span class="heading">Ra</span>
-                            <span class="heading-full">Radium</span>
-                        </td>
-                    	<td class="el actinide">
-                        	<span class="atomic-number">89-103</span>
-                        	<span class="heading"></span>
-                        </td>
-                    	<td class="el transition-metal" id="104">
-                        	<span class="atomic-number">104</span>
-                        	<span class="heading">Rf</span>
-                            <span class="heading-full">Rutherfordium</span>
-                        </td>
-                    	<td class="el transition-metal" id="105">
-                        	<span class="atomic-number">105</span>
-                        	<span class="heading">Db</span>
-                            <span class="heading-full">Dubnium</span>
-                        </td>
-                    	<td class="el transition-metal" id="106">
-                        	<span class="atomic-number">106</span>
-                        	<span class="heading">Sg</span>
-                            <span class="heading-full">Seaborgium</span>
-                        </td>
-                    	<td class="el transition-metal" id="107">
-                        	<span class="atomic-number">107</span>
-                        	<span class="heading">Bh</span>
-                            <span class="heading-full">Bohrium</span>
-                        </td>
-                    	<td class="el transition-metal" id="108">
-                        	<span class="atomic-number">108</span>
-                        	<span class="heading">Hs</span>
-                            <span class="heading-full">Hassium</span>
-                        </td>
-                    	<td class="el unknown" id="109">
-                        	<span class="atomic-number">109</span>
-                        	<span class="heading">Mt</span>
-                            <span class="heading-full">Meitnerium</span>
-                        </td>
-                    	<td class="el unknown" id="110">
-                        	<span class="atomic-number">110</span>
-                        	<span class="heading">Ds</span>
-                            <span class="heading-full">Darmstadtium</span>
-                        </td>
-                    	<td class="el unknown" id="111">
-                        	<span class="atomic-number">111</span>
-                        	<span class="heading">Rg</span>
-                            <span class="heading-full">Roentgenium</span>
-                        </td>
-                    	<td class="el transition-metal" id="112">
-                        	<span class="atomic-number">112</span>
-                        	<span class="heading">Cn</span>
-                            <span class="heading-full">Copernicium</span>
-                        </td>
-                    	<td class="el unknown" id="113">
-                        	<span class="atomic-number">113</span>
-                        	<span class="heading">Uut</span>
-                            <span class="heading-full">Ununtrium</span>
-                        </td>
-                    	<td class="el unknown" id="114">
-                        	<span class="atomic-number">114</span>
-                        	<span class="heading">Fl</span>
-                            <span class="heading-full">Flerovium</span>
-                        </td>
-                    	<td class="el unknown" id="115">
-                        	<span class="atomic-number">115</span>
-                        	<span class="heading">Uup</span>
-                            <span class="heading-full">Ununpentium</span>
-                        </td>
-                    	<td class="el unknown" id="116">
-                        	<span class="atomic-number">116</span>
-                        	<span class="heading">Lv</span>
-                            <span class="heading-full">Livermorium</span>
-                        </td>
-                    	<td class="el unknown" id="117">
-                        	<span class="atomic-number">117</span>
-                        	<span class="heading">Uus</span>
-                            <span class="heading-full">Ununseptium</span>
-                        </td>
-                    	<td class="el unknown" id="118">
-                        	<span class="atomic-number">118</span>
-                        	<span class="heading">Uuo</span>
-                            <span class="heading-full">Ununoctium</span>
-                        </td>
-                    </tr>
-                	<tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                	<tr>
-                    	<td></td>
-                    	<th class="col2" colspan="2">Lathanides</th>
-                    	<td class="el lathanide" id="57">
-                        	<span class="atomic-number">57</span>
-                        	<span class="heading">La</span>
-                            <span class="heading-full">Lanthanum</span>
-                        </td>
-                    	<td class="el lathanide" id="58">
-                        	<span class="atomic-number">58</span>
-                        	<span class="heading">Ce</span>
-                            <span class="heading-full">Cerium</span>
-                        </td>
-                    	<td class="el lathanide" id="59">
-                        	<span class="atomic-number">59</span>
-                        	<span class="heading">Pr</span>
-                            <span class="heading-full">Praseodymium</span>
-                        </td>
-                    	<td class="el lathanide" id="60">
-                        	<span class="atomic-number">60</span>
-                        	<span class="heading">Nd</span>
-                            <span class="heading-full">Neodymium</span>
-                        </td>
-                    	<td class="el lathanide" id="61">
-                        	<span class="atomic-number">61</span>
-                        	<span class="heading">Pm</span>
-                            <span class="heading-full">Promethium</span>
-                        </td>
-                    	<td class="el lathanide" id="62">
-                        	<span class="atomic-number">62</span>
-                        	<span class="heading">Sm</span>
-                            <span class="heading-full">Samarium</span>
-                        </td>
-                    	<td class="el lathanide" id="63">
-                        	<span class="atomic-number">63</span>
-                        	<span class="heading">Eu</span>
-                            <span class="heading-full">Europium</span>
-                        </td>
-                    	<td class="el lathanide" id="64">
-                        	<span class="atomic-number">64</span>
-                        	<span class="heading">Gd</span>
-                            <span class="heading-full">Gadolinium</span>
-                        </td>
-                    	<td class="el lathanide" id="65">
-                        	<span class="atomic-number">65</span>
-                        	<span class="heading">Tb</span>
-                            <span class="heading-full">Terbium</span>
-                        </td>
-                    	<td class="el lathanide" id="66">
-                        	<span class="atomic-number">66</span>
-                        	<span class="heading">Dy</span>
-                            <span class="heading-full">Dysprosium</span>
-                        </td>
-                    	<td class="el lathanide" id="67">
-                        	<span class="atomic-number">67</span>
-                        	<span class="heading">Ho</span>
-                            <span class="heading-full">Holmium</span>
-                        </td>
-                    	<td class="el lathanide" id="68">
-                        	<span class="atomic-number">68</span>
-                        	<span class="heading">Er</span>
-                            <span class="heading-full">Erbium</span>
-                        </td>
-                    	<td class="el lathanide" id="69">
-                        	<span class="atomic-number">69</span>
-                        	<span class="heading">Tm</span>
-                            <span class="heading-full">Thulium</span>
-                        </td>
-                    	<td class="el lathanide" id="70">
-                        	<span class="atomic-number">70</span>
-                        	<span class="heading">Yb</span>
-                            <span class="heading-full">Ytterbium</span>
-                        </td>
-                    	<td class="el lathanide" id="71">
-                        	<span class="atomic-number">71</span>
-                        	<span class="heading">Lu</span>
-                            <span class="heading-full">Lutetium</span>
-                        </td>
-                    	<td></td>
-                    </tr>
-                	<tr>
-                    	<td></td>
-                    	<th class="col2" colspan="2">Actinides</th>
-                    	<td class="el actinide" id="89">
-                        	<span class="atomic-number">89</span>
-                        	<span class="heading">Ac</span>
-                            <span class="heading-full">Actinium</span>
-                        </td>
-                    	<td class="el actinide" id="90">
-                        	<span class="atomic-number">90</span>
-                        	<span class="heading">Th</span>
-                            <span class="heading-full">Thorium</span>
-                        </td>
-                    	<td class="el actinide" id="91">
-                        	<span class="atomic-number">91</span>
-                        	<span class="heading">Pa</span>
-                            <span class="heading-full">Protactinium</span>
-                        </td>
-                    	<td class="el actinide" id="92">
-                        	<span class="atomic-number">92</span>
-                        	<span class="heading">U</span>
-                            <span class="heading-full">Uranium</span>
-                        </td>
-                    	<td class="el actinide" id="93">
-                        	<span class="atomic-number">93</span>
-                        	<span class="heading">Np</span>
-                            <span class="heading-full">Neptunium</span>
-                        </td>
-                    	<td class="el actinide" id="94">
-                        	<span class="atomic-number">94</span>
-                        	<span class="heading">Pu</span>
-                            <span class="heading-full">Plutonium</span>
-                        </td>
-                    	<td class="el actinide" id="95">
-                        	<span class="atomic-number">95</span>
-                        	<span class="heading">Am</span>
-                            <span class="heading-full">Americium</span>
-                        </td>
-                    	<td class="el actinide" id="96">
-                        	<span class="atomic-number">96</span>
-                        	<span class="heading">Cm</span>
-                            <span class="heading-full">Curium</span>
-                        </td>
-                    	<td class="el actinide" id="97">
-                        	<span class="atomic-number">97</span>
-                        	<span class="heading">Bk</span>
-                            <span class="heading-full">Berkelium</span>
-                        </td>
-                    	<td class="el actinide" id="98">
-                        	<span class="atomic-number">98</span>
-                        	<span class="heading">Cf</span>
-                            <span class="heading-full">Californium</span>
-                        </td>
-                    	<td class="el actinide" id="99">
-                        	<span class="atomic-number">99</span>
-                        	<span class="heading">Es</span>
-                            <span class="heading-full">Einsteinium</span>
-                        </td>
-                    	<td class="el actinide" id="100">
-                        	<span class="atomic-number">100</span>
-                        	<span class="heading">Fm</span>
-                            <span class="heading-full">Fermium</span>
-                        </td>
-                    	<td class="el actinide" id="101">
-                        	<span class="atomic-number">101</span>
-                        	<span class="heading">Md</span>
-                            <span class="heading-full">Mendelevium</span>
-                        </td>
-                    	<td class="el actinide" id="102">
-                        	<span class="atomic-number">102</span>
-                        	<span class="heading">No</span>
-                            <span class="heading-full">Nobelium</span>
-                        </td>
-                    	<td class="el actinide" id="103">
-                        	<span class="atomic-number">103</span>
-                        	<span class="heading">Lr</span>
-                            <span class="heading-full">Lawrencium</span>
-                        </td>
-                    	<td></td>
-                    </tr>
-                </table>
+				<a href="#" id="element-close">Close all open elements</a>
+			</div>
 
-        		<div class="periodic-table">
+		</div>
 
-        			<h2 class="heading">Key:</h2>
+		<div id="wrapper" class="centered">
 
-        			<ul class="key-list">
-        				<li class="key-el" id="non-metal">
-        					<div class="el non-metal v-align"></div>
-        					<span class="v-align">Non-metal</span>
-        				</li>
-        				<li class="key-el" id="noble-gas">
-        					<div class="el noble-gas v-align"></div>
-        					<span class="v-align">Noble gas</span>
-        				</li>
-        				<li class="key-el" id="halogen">
-        					<div class="el halogen v-align"></div>
-        					<span class="v-align">halogen</span>
-        				</li>
-        				<li class="key-el" id="alkali-metal">
-        					<div class="el alkali-metal v-align"></div>
-        					<span class="v-align">Alkali metal</span>
-        				</li>
-        				<li class="key-el" id="transition-metal">
-        					<div class="el transition-metal v-align"></div>
-        					<span class="v-align">Transition metal</span>
-        				</li>
-        				<li class="key-el" id="metalloid">
-        					<div class="el metalloid v-align"></div>
-        					<span class="v-align">Metalloid</span>
-        				</li>
-        				<li class="key-el" id="alkali-earth-metal">
-        					<div class="el alkali-earth-metal v-align"></div>
-        					<span class="v-align">Alkali earth metal</span>
-        				</li>
-        				<li class="key-el" id="post-transition-metal">
-        					<div class="el post-transition-metal v-align"></div>
-        					<span class="v-align">Post transition metal</span>
-        				</li>
-        				<li class="key-el" id="lathanide">
-        					<div class="el lathanide v-align"></div>
-        					<span class="v-align">lathanide</span>
-        				</li>
-        				<li class="key-el" id="actinide">
-        					<div class="el actinide v-align"></div>
-        					<span class="v-align">actinide</span>
-        				</li>
-        			</ul>
+			<table class="periodic-table" id="periodic-table">
+				<thead>
+					<tr>
+						<h1>Periodic Table of IT Ops Tools</h1>
+					</tr>
+				</thead>
+				<tr>
+					<th></th>
+					<td class="el non-metal" id="1">
+						<span class="atomic-number">1</span>
+						<sup class="head"><b>Ms</b></sup>
+						<sup class="text">Windows</sup>
+						<span class="heading-full">Hydrogen</span>
+					</td>
+					
+					<td></td>
+					<td><b style="margin-left: 15px;">Layout</b>
+						<ul style="width:100px; font-size: 14px; margin-top:7px; margin-left: 16px;">
+							<li>
+								<div class="radio">
+									<input id="theme-default" value="default" name="theme" type="radio">
+									<label for="theme-default">Default</label>
+								</div>
+							</li>
+							<li>
+								<div class="radio">
+									<input id="theme-primary-function" value="primary-function" name="theme"
+										type="radio" checked>
+									<label for="theme-primary-function">Functions</label>
+								</div>
+							</li>
+							<li>
+								<div class="radio">
+									<input id="theme-default" value="logos" name="theme" type="radio">
+									<label for="theme-default">Logos</label>
+								</div>
+							</li>
+							<li>
+								<div class="radio">
+									<input id="theme-default" value="branded" name="theme" type="radio">
+									<label for="theme-default">Branding</label>
+								</div>
+							</li>
+							<li>
+								<div class="radio">
+									<input id="theme-default" value="party-time" name="theme" type="radio">
+									<label for="theme-default">Party&nbsp;Time</label>
+								</div>
+							</li>
+						</ul>
+					</td>
 
-        		</div>
+					<td>
+						<b style="margin-left: 60px;">Primary&nbsp;Function</b>
+						<ul style="width:140px; margin-left:5em ; font-size:15px ; margin-top:10px;">
+							<li>
+								<sup>OS</sup>
+							</li>
+							<li>
+								<sup>VDI</sup>
+							</li>
+							<li>
+								<sup>Client
+									Management</sup>
+							</li>
+							<li>
+								<sup>Log
+									Management</sup>
+							</li>
+							<li>
+								<sup>Network
+									Monitoring</sup>
+							</li>
+						</ul>
+					</td>
+					<td>
+						<ul style="width:140px; margin-left:10em ; font-size:15px ; margin-top:2em;">
+							<li>
+								<sup>MDM</sup>
+							</li>
+							<li>
+								<sup>ITIM</sup>
+							</li>
+							<li>
+								<sup>APM</sup>
+							</li>
+							<li>
+								<sup>DEX</sup>
+							</li>
+							<li>
+								<sup>ITOA</sup>
+							</li>
+						</ul>
+					</td>
+					<td>
+						<ul style="width:140px; margin-left:10em ; font-size:15px ; margin-top:2em;">
+							<li>
+								<sup>SIEM</sup>
+							</li>
+							<li>
+								<sup>AIOps</sup>
+							</li>
+							<li>
+								<sup>ITSA</sup>
+							</li>
+							<li>
+								<sup>ITSM</sup>
+							</li>
+							<li>
+								<sup>CM</sup>
+							</li>
+						</ul>
+					</td>
+					<td>
+						<ul style="width:140px; margin-left:10em ; font-size:15px ; margin-top:2em;">
+							<li>
+								<sup>Help / Service Desk</sup>
+							</li>
+							<li>
+								<sup>Knowledge Management</sup>
+							</li>
+							<li>
+								<sup>IDM / IAM</sup>
+							</li>
+							<li>
+								<sup>SAM / ITAM</sup>
+							</li>
+							<li>
+								<sup>WTF</sup>
+							</li>
+						</ul>
+					</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="el noble-gas" id="2">
+						<span class="atomic-number">2</span>
+						<sup class="head"><b>Sn</b></sup>
+						<div class="text">Servicenow</div>
+						<span class="heading-full">Helium</span>
+					</td>
+				</tr>
+				<tr>
+					<th></th>
+					<td class="el alkali-metal" id="3">
+						<span class="atomic-number">3</span>
+						<sup class="head"><b>Ap</b></sup>
+						<div class="text">macOS</div>
+						<span class="heading-full">Lithium</span>
+					</td>
+					<td class="el alkali-earth-metal" id="4">
+						<span class="atomic-number">4</span>
+						<sup class="head"><b>Vm</b></sup>
+						<div class="text">Horizon Cloud</div>
+						<span class="heading-full">Beryllium</span>
+					</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="el metalloid" id="5">
+						<span class="atomic-number">5</span>
+						<sup class="head"><b>Ad</b></sup>
+						<div class="text">AppDynamics</div>
+						<span class="heading-full">Boron</span>
+					</td>
+					<td class="el non-metal" id="6">
+						<span class="atomic-number">6</span>
+						<sup class="head"><b>Nx</b></sup>
+						<div class="text">Nextthink</div>
+						<span class="heading-full">Carbon</span>
+					</td>
+					<td class="el non-metal" id="7">
+						<span class="atomic-number">7</span>
+						<sup class="head"><b>SK</b></sup>
+						<div class="text">Splunk</div>
+						<span class="heading-full">Nitrogen</span>
+					</td>
+					<td class="el non-metal" id="8">
+						<span class="atomic-number">8</span>
+						<sup class="head"><b>Pd</b></sup>
+						<div class="text">PagerDuty</div>
+						<span class="heading-full">Oxygen</span>
+					</td>
+					<td class="el halogen" id="9">
+						<span class="atomic-number">9</span>
+						<sup class="head"><b>Ev</b></sup>
+						<div class="text">Easyvista</div>
+						<span class="heading-full">Fluorine</span>
+					</td>
+					<td class="el noble-gas" id="10">
+						<span class="atomic-number">10</span>
+						<sup class="head"><b>Rm</b></sup>
+						<div class="text">BMC</div>
+						<span class="heading-full">Neon</span>
+					</td>
+				</tr>
+				<tr>
+					<th></th>
+					<td class="el alkali-metal" id="11">
+						<span class="atomic-number">11</span>
+						<sup class="head"><b>iOS</b></sup>
+						<div class="text">iOS</div>
+						<span class="heading-full">Sodium</span>
+					</td>
+					<td class="el alkali-earth-metal" id="12">
+						<span class="atomic-number">12</span>
+						<sup class="head"><b>Cx</b></sup>
+						<div class="text">Citrix</div>
+						<span class="heading-full">Magnesium</span>
+					</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="el post-transition-metal" id="13">
+						<span class="atomic-number">13</span>
+						<sup class="head"><b>Nr</b></sup>
+						<div class="text">New Relic APM</div>
+						<span class="heading-full">Aluminium</span>
+					</td>
+					<td class="el metalloid" id="14">
+						<span class="atomic-number">14</span>
+						<sup class="head"><b>LK</b></sup>
+						<div class="text">Lakeside SysTrack</div>
+						<span class="heading-full">Silicon</span>
+					</td>
+					<td class="el non-metal" id="15">
+						<span class="atomic-number">15</span>
+						<sup class="head"><b>ElK</b></sup>
+						<div class="text">Elastic</div>
+						<span class="heading-full">Phosphorus</span>
+					</td>
+					<td class="el non-metal" id="16">
+						<span class="atomic-number">16</span>
+						<sup class="head"><b>Og</b></sup>
+						<div class="text">OpsGenie</div>
+						<span class="heading-full">Sulfur</span>
+					</td>
+					<td class="el halogen" id="17">
+						<span class="atomic-number">17</span>
+						<sup class="head"><b>Ax</b></sup>
+						<div class="text">Axios Systems</div>
+						<span class="heading-full">Chlorine</span>
+					</td>
+					<td class="el noble-gas" id="18">
+						<span class="atomic-number">18</span>
+						<sup class="head"><b>Cw</b></sup>
+						<div class="text">Cherwell</div>
+						<span class="heading-full">Argon</span>
+					</td>
+				</tr>
+				<tr>
+					<th></th>
+					<td class="el alkali-metal" id="19">
+						<span class="atomic-number">19</span>
+						<sup class="head"><b>Ar</b></sup>
+						<div class="text">Android</div>
+						<span class="heading-full">Potassium</span>
+					</td>
+					<td class="el alkali-earth-metal" id="20">
+						<span class="atomic-number">20</span>
+						<sup class="head"><b>Am</b></sup>
+						<div class="text">Amazon Workspaces</div>
+						<span class="heading-full">Calcium</span>
+					</td>
+					<td class="el transition-metal" id="21">
+						<span class="atomic-number">21</span>
+						<sup class="head"><b>Sc</b></sup>
+						<div class="text">SCCM</div>
+						<span class="heading-full">Scandium</span>
+					</td>
+					<td class="el transition-metal" id="22">
+						<span class="atomic-number">22</span>
+						<sup class="head"><b>Jf</b></sup>
+						<div class="text">Jamf Now</div>
+						<span class="heading-full">Titanium</span>
+					</td>
+					<td class="el transition-metal" id="23">
+						<span class="atomic-number">23</span>
+						<sup class="head"><b>Lsh</b></sup>
+						<div class="text">Logstash</div>
+						<span class="heading-full">Vanadium</span>
+					</td>
+					<td class="el transition-metal" id="24">
+						<span class="atomic-number">24</span>
+						<sup class="head"><b>Le</b></sup>
+						<div class="text">Logentries</div>
+						<span class="heading-full">Chromium</span>
+					</td>
+					<td class="el transition-metal" id="25">
+						<span class="atomic-number">25</span>
+						<sup class="head"><b>Cc</b></sup>
+						<div class="text">Cacti</div>
+						<span class="heading-full">Manganese</span>
+					</td>
+					<td class="el transition-metal" id="26">
+						<span class="atomic-number">26</span>
+						<sup class="head"><b>Ng</b></sup>
+						<div class="text">Nagios</div>
+						<span class="heading-full">Iron</span>
+					</td>
+					<td class="el transition-metal" id="27">
+						<span class="atomic-number">27</span>
+						<sup class="head"><b>Te</b></sup>
+						<div class="text">Thousand Eyes</div>
+						<span class="heading-full">Cobalt</span>
+					</td>
+					<td class="el transition-metal" id="28">
+						<span class="atomic-number">28</span>
+						<sup class="head"><b>Dd</b></sup>
+						<div class="text">Datadog</div>
+						<span class="heading-full">Nickel</span>
+					</td>
+					<td class="el transition-metal" id="29">
+						<span class="atomic-number">29</span>
+						<sup class="head"><b>Ze</b></sup>
+						<div class="text">Zenoss</div>
+						<span class="heading-full">Copper</span>
+					</td>
+					<td class="el transition-metal" id="30">
+						<span class="atomic-number">30</span>
+						<sup class="head"><b>Ze</b></sup>
+						<div class="text">Zabbix</div>
+						<span class="heading-full">Zinc</span>
+					</td>
+					<td class="el post-transition-metal" id="31">
+						<span class="atomic-number">31</span>
+						<sup class="head"><b>Dt</b></sup>
+						<div class="text">Dynatrace</div>
+						<span class="heading-full">Gallium</span>
+					</td>
+					<td class="el metalloid" id="32">
+						<span class="atomic-number">32</span>
+						<sup class="head"><b>Ra</b></sup>
+						<div class="text">Aternity</div>
+						<span class="heading-full">Germanium</span>
+					</td>
+					<td class="el metalloid" id="33">
+						<span class="atomic-number">33</span>
+						<sup class="head"><b>Sl</b></sup>
+						<div class="text">Sumo&nbsp;Logic</div>
+						<span class="heading-full">Arsenic</span>
+					</td>
+					<td class="el non-metal" id="34">
+						<span class="atomic-number">34</span>
+						<sup class="head"><b>Vo</b></sup>
+						<div class="text">VictorOps</div>
+						<span class="heading-full">Selenium</span>
+					</td>
+					<td class="el halogen" id="35">
+						<span class="atomic-number">35</span>
+						<sup class="head"><b>Sa</b></sup>
+						<div class="text">SysAid</div>
+						<span class="heading-full">Bromine</span>
+					</td>
+					<td class="el noble-gas" id="36">
+						<span class="atomic-number">36</span>
+						<sup class="head"><b>Sw</b></sup>
+						<div class="text">SolarWinds</div>
+						<span class="heading-full">Krypton</span>
+					</td>
+				</tr>
+				<tr>
+					<th></th>
+					<td class="el alkali-metal" id="37">
+						<span class="atomic-number">37</span>
+						<sup class="head"><b>Lx</b></sup>
+						<div class="text">Linux</div>
+						<span class="heading-full">Rubidium</span>
+					</td>
+					<td class="el alkali-earth-metal" id="38">
+						<span class="atomic-number">38</span>
+						<sup class="head"><b>Rh</b></sup>
+						<div class="text">Red Hat Vizualization</div>
+						<span class="heading-full">Strontium</span>
+					</td>
+					<td class="el transition-metal" id="39">
+						<span class="atomic-number">39</span>
+						<sup class="head"><b>Ks</b></sup>
+						<div class="text">Kaseys&nbsp;VSA</div>
+						<span class="heading-full">Yttrium</span>
+					</td>
+					<td class="el transition-metal" id="40">
+						<span class="atomic-number">40</span>
+						<sup class="head"><b>Aw</b></sup>
+						<div class="text">AirWatch</div>
+						<span class="heading-full">Zirconium</span>
+					</td>
+					<td class="el transition-metal" id="41">
+						<span class="atomic-number">41</span>
+						<sup class="head"><b>Pt</b></sup>
+						<div class="text">Papertrial</div>
+						<span class="heading-full">Niobium</span>
+					</td>
+					<td class="el transition-metal" id="42">
+						<span class="atomic-number">42</span>
+						<sup class="head"><b>Sr</b></sup>
+						<div class="text">Scalyr</div>
+						<span class="heading-full">Molybdenum</span>
+					</td>
+					<td class="el transition-metal" id="43">
+						<span class="atomic-number">43</span>
+						<sup class="head"><b>Ig</b></sup>
+						<div class="text">Icinga</div>
+						<span class="heading-full">Technetium</span>
+					</td>
+					<td class="el transition-metal" id="44">
+						<span class="atomic-number">44</span>
+						<sup class="head"><b>Wg</b></sup>
+						<div class="text">WhatsUp Gold</div>
+						<span class="heading-full">Ruthenium</span>
+					</td>
+					<td class="el transition-metal" id="45">
+						<span class="atomic-number">45</span>
+						<sup class="head"><b>Tv</b></sup>
+						<div class="text">TruView</div>
+						<span class="heading-full">Rhodium</span>
+					</td>
+					<td class="el transition-metal" id="46">
+						<span class="atomic-number">46</span>
+						<sup class="head"><b>Stk</b></sup>
+						<div class="text">StackState</div>
+						<span class="heading-full">Palladium</span>
+					</td>
+					<td class="el transition-metal" id="47">
+						<span class="atomic-number">47</span>
+						<sup class="head"><b>Mn</b></sup>
+						<div class="text">Monitis</div>
+						<span class="heading-full">Silver</span>
+					</td>
+					<td class="el transition-metal" id="48">
+						<span class="atomic-number">48</span>
+						<sup class="head"><b>Slc</b></sup>
+						<div class="text">ScienceLogic</div>
+						<span class="heading-full">Cadmium</span>
+					</td>
+					<td class="el post-transition-metal" id="49">
+						<span class="atomic-number">49</span>
+						<sup class="head"><b>Rb</b></sup>
+						<div class="text">SteelCentral APM</div>
+						<span class="heading-full">Indium</span>
+					</td>
+					<td class="el post-transition-metal" id="50">
+						<span class="atomic-number">50</span>
+						<sup class="head"><b>Cp</b></sup>
+						<div class="text">Captchpoint</div>
+						<span class="heading-full">Tin</span>
+					</td>
+					<td class="el metalloid" id="51">
+						<span class="atomic-number">51</span>
+						<sup class="head"><b>En</b></sup>
+						<div class="text">Evolven</div>
+						<span class="heading-full">Antimony</span>
+					</td>
+					<td class="el metalloid" id="52">
+						<span class="atomic-number">52</span>
+						<sup class="head"><b>Sg</b></sup>
+						<div class="text">Statuspage</div>
+						<span class="heading-full">Tellurium</span>
+					</td>
+					<td class="el halogen" id="53">
+						<span class="atomic-number">53</span>
+						<sup class="head"><b>Me</b></sup>
+						<div class="text">Manage Engine</div>
+						<span class="heading-full">Iodine</span>
+					</td>
+					<td class="el noble-gas" id="54">
+						<span class="atomic-number">54</span>
+						<sup class="head"><b>Sm</b></sup>
+						<div class="text">Samanage</div>
+						<span class="heading-full">Xenon</span>
+					</td>
+				</tr>
+				<tr>
+					<th></th>
+					<td class="el alkali-metal" id="55">
+						<span class="atomic-number">55</span>
+						<sup class="head"><b>Cr</b></sup>
+						<div class="text">Chrome&nbsp;OS</div>
+						<span class="heading-full">Caesium</span>
+					</td>
+					<td class="el alkali-earth-metal" id="56">
+						<span class="atomic-number">56</span>
+						<sup class="head"><b>Pr</b></sup>
+						<div class="text">Parallets RAS</div>
+						<span class="heading-full">Barium</span>
+					</td>
+					<td class="el lathanide">
+						<span class="atomic-number">57</span>
+						<sup class="head"><b>Qk</b></sup>
+						<div class="text">Kace</div>
+						<span class="heading-full"></span>
+					</td>
+					<td class="el transition-metal" id="72">
+						<span class="atomic-number">58</span>
+						<sup class="head"><b>Mi</b></sup>
+						<div class="text">MobileIron</div>
+						<span class="heading-full">Hafnium</span>
+					</td>
+					<td class="el transition-metal" id="73">
+						<span class="atomic-number">59</span>
+						<sup class="head"><b>GI</b></sup>
+						<div class="text">Graylog</div>
+						<span class="heading-full">Tantalum</span>
+					</td>
+					<td class="el transition-metal" id="74">
+						<span class="atomic-number">60</span>
+						<sup class="head"><b>Ls</b></sup>
+						<div class="text">Logsene</div>
+						<span class="heading-full">Tungsten</span>
+					</td>
+					<td class="el transition-metal" id="75">
+						<span class="atomic-number">61</span>
+						<sup class="head"><b>Cv</b></sup>
+						<div class="text">Corvil</div>
+						<span class="heading-full">Rhenium</span>
+					</td>
+					<td class="el transition-metal" id="76">
+						<span class="atomic-number">62</span>
+						<sup class="head"><b>Eh</b></sup>
+						<div class="text">ExtraHop</div>
+						<span class="heading-full">Osmium</span>
+					</td>
+					<td class="el transition-metal" id="77">
+						<span class="atomic-number">63</span>
+						<sup class="head"><b>My</b></sup>
+						<div class="text">Metricly</div>
+						<span class="heading-full">Iridium</span>
+					</td>
+					<td class="el transition-metal" id="78">
+						<span class="atomic-number">64</span>
+						<sup class="head"><b>Ov</b></sup>
+						<div class="text">Opsview</div>
+						<span class="heading-full">Platinum</span>
+					</td>
+					<td class="el transition-metal" id="79">
+						<span class="atomic-number">65</span>
+						<sup class="head"><b>Sf</b></sup>
+						<div class="text">SignalFx</div>
+						<span class="heading-full">Gold</span>
+					</td>
+					<td class="el transition-metal" id="80">
+						<span class="atomic-number">66</span>
+						<sup class="head"><b>Lm</b></sup>
+						<div class="text">Logic Monitor</div>
+						<span class="heading-full">Mercury</span>
+					</td>
+					<td class="el post-transition-metal" id="81">
+						<span class="atomic-number">67</span>
+						<sup class="head"><b>Cs</b></sup>
+						<div class="text">Correlsense</div>
+						<span class="heading-full">Thallium</span>
+					</td>
+					<td class="el post-transition-metal" id="82">
+						<span class="atomic-number">68</span>
+						<sup class="head"><b>An</b></sup>
+						<div class="text">AppNeta</div>
+						<span class="heading-full">Lead</span>
+					</td>
+					<td class="el post-transition-metal" id="83">
+						<span class="atomic-number">69</span>
+						<sup class="head"><b>Ob</b></sup>
+						<div class="text">Ops Bridge</div>
+						<span class="heading-full">Bismuth</span>
+					</td>
+					<td class="el metalloid" id="84">
+						<span class="atomic-number">70</span>
+						<sup class="head"><b>Ao</b></sup>
+						<div class="text">AlertOps</div>
+						<span class="heading-full">Polonium</span>
+					</td>
+					<td class="el halogen" id="85">
+						<span class="atomic-number">71</span>
+						<sup class="head"><b>Fs</b></sup>
+						<div class="text">FreshService</div>
+						<span class="heading-full">Astatine</span>
+					</td>
+					<td class="el noble-gas" id="86">
+						<span class="atomic-number">72</span>
+						<sup class="head"><b>Td</b></sup>
+						<div class="text">TopDesk</div>
+						<span class="heading-full">Radon</span>
+					</td>
+				</tr>
+				<tr>
+					<th></th>
+					<td class="el alkali-metal" id="87">
+						<span class="atomic-number">73</span>
+						<sup class="head"><b>Ub</b></sup>
+						<div class="text">Ubuntu</div>
+						<span class="heading-full">Francium</span>
+					</td>
+					<td class="el alkali-earth-metal" id="88">
+						<span class="atomic-number">74</span>
+						<sup class="head"><b>VX</b></sup>
+						<div class="text">Cisco VXI</div>
+						<span class="heading-full">Radium</span>
+					</td>
+					<td class="el actinide">
+						<span class="atomic-number">75</span>
+						<sup class="head"><b>Mx</b></sup>
+						<div class="text">Matrix42</div>
+						<span class="heading"></span>
+					</td>
+					<td class="el transition-metal" id="104">
+						<span class="atomic-number">76</span>
+						<sup class="head"><b>Mk</b></sup>
+						<div class="text">Meraki</div>
+						<span class="heading-full">Rutherfordium</span>
+					</td>
+					<td class="el transition-metal" id="105">
+						<span class="atomic-number">77</span>
+						<sup class="head"><b>Lg</b></sup>
+						<div class="text">Loggly</div>
+						<span class="heading-full">Dubnium</span>
+					</td>
+					<td class="el transition-metal" id="106">
+						<span class="atomic-number">78</span>
+						<sup class="head"><b>Lz</b></sup>
+						<div class="text">Logz.io</div>
+						<span class="heading-full">Seaborgium</span>
+					</td>
+					<td class="el transition-metal" id="107">
+						<span class="atomic-number">79</span>
+						<sup class="head"><b>Pg</b></sup>
+						<div class="text">PRTG</div>
+						<span class="heading-full">Bohrium</span>
+					</td>
+					<td class="el transition-metal" id="108">
+						<span class="atomic-number">80</span>
+						<sup class="head"><b>Nb</b></sup>
+						<div class="text">NetBrain</div>
+						<span class="heading-full">Hassium</span>
+					</td>
+					<td class="el unknown" id="109">
+						<span class="atomic-number">81</span>
+						<sup class="head"><b>Ws</b></sup>
+						<div class="text">Wireshark</div>
+						<span class="heading-full">Meitnerium</span>
+					</td>
+					<td class="el unknown" id="110">
+						<span class="atomic-number">82</span>
+						<sup class="head"><b>Om</b></sup>
+						<div class="text">Observium</div>
+						<span class="heading-full">Darmstadtium</span>
+					</td>
+					<td class="el unknown" id="111">
+						<span class="atomic-number">83</span>
+						<sup class="head"><b>On</b></sup>
+						<div class="text">openNMS</div>
+						<span class="heading-full">Roentgenium</span>
+					</td>
+					<td class="el transition-metal" id="112">
+						<span class="atomic-number">84</span>
+						<sup class="head"><b>Su</b></sup>
+						<div class="text">Sensu</div>
+						<span class="heading-full">Copernicium</span>
+					</td>
+					<td class="el unknown" id="113">
+						<span class="atomic-number">85</span>
+						<sup class="head"><b>Mf</b></sup>
+						<div class="text">Micro Focus</div>
+						<span class="heading-full">Ununtrium</span>
+					</td>
+					<td class="el unknown" id="114">
+						<span class="atomic-number">86</span>
+						<sup class="head"><b>Lo</b></sup>
+						<div class="text">Loom Systems</div>
+						<span class="heading-full">Flerovium</span>
+					</td>
+					<td class="el unknown" id="115">
+						<span class="atomic-number">87</span>
+						<sup class="head"><b>Ns</b></sup>
+						<div class="text">Nastel</div>
+						<span class="heading-full">Ununpentium</span>
+					</td>
+					<td class="el unknown" id="116">
+						<span class="atomic-number">88</span>
+						<sup class="head"><b>Bp</b></sup>
+						<div class="text">BigPanda</div>
+						<span class="heading-full">Livermorium</span>
+					</td>
+					<td class="el unknown" id="117">
+						<span class="atomic-number">89</span>
+						<sup class="head"><b>Cg</b></sup>
+						<div class="text">ChangeGear</div>
+						<span class="heading-full">Ununseptium</span>
+					</td>
+					<td class="el unknown" id="118">
+						<span class="atomic-number">90</span>
+						<sup class="head"><b>Iv</b></sup>
+						<div class="text">Ivanti</div>
+						<span class="heading-full">Ununoctium</span>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<th class="col2" colspan="2"></th>
+					<td class="el lathanide" id="57">
+						<span class="atomic-number">91</span>
+						<sup class="head"><b>Pp</b></sup>
+						<div class="text">Puppet</div>
+						<span class="heading-full">Lanthanum</span>
+					</td>
+					<td class="el lathanide" id="58">
+						<span class="atomic-number">92</span>
+						<sup class="head"><b>Ch</b></sup>
+						<div class="text">Chef</div>
+						<span class="heading-full">Cerium</span>
+					</td>
+					<td class="el lathanide" id="59">
+						<span class="atomic-number">93</span>
+						<sup class="head"><b>Al</b></sup>
+						<div class="text">Ansible</div>
+						<span class="heading-full">Praseodymium</span>
+					</td>
+					<td class="el lathanide" id="60">
+						<span class="atomic-number">94</span>
+						<sup class="head"><b>Na</b></sup>
+						<div class="text">SaltStack</div>
+						<span class="heading-full">Neodymium</span>
+					</td>
+					<td class="el lathanide" id="61">
+						<span class="atomic-number">95</span>
+						<sup class="head"><b>Ji</b></sup>
+						<div class="text">Jira&nbsp;Servioce Desk</div>
+						<span class="heading-full">Promethium</span>
+					</td>
+					<td class="el lathanide" id="62">
+						<span class="atomic-number">96</span>
+						<sup class="head"><b>Zd</b></sup>
+						<div class="text">Zendesk Support</div>
+						<span class="heading-full">Samarium</span>
+					</td>
+					<td class="el lathanide" id="63">
+						<span class="atomic-number">97</span>
+						<sup class="head"><b>Fd</b></sup>
+						<div class="text">Freshdesk</div>
+						<span class="heading-full">Europium</span>
+					</td>
+					<td class="el lathanide" id="64">
+						<span class="atomic-number">98</span>
+						<sup class="head"><b>Hs</b></sup>
+						<div class="text">Help Scout</div>
+						<span class="heading-full">Gadolinium</span>
+					</td>
+					<td class="el lathanide" id="65">
+						<span class="atomic-number">99</span>
+						<sup class="head"><b>Spw</b></sup>
+						<div class="text">Spiceworks Help Desk</div>
+						<span class="heading-full">Terbium</span>
+					</td>
+					<td class="el lathanide" id="66">
+						<span class="atomic-number">100</span>
+						<sup class="head"><b>Sd</b></sup>
+						<div class="text">Desk.com</div>
+						<span class="heading-full">Dysprosium</span>
+					</td>
+					<td class="el lathanide" id="67">
+						<span class="atomic-number">101</span>
+						<sup class="head"><b>Cf</b></sup>
+						<div class="text">Confluence</div>
+						<span class="heading-full">Holmium</span>
+					</td>
+					<td class="el lathanide" id="68">
+						<span class="atomic-number">102</span>
+						<sup class="head"><b>Sh</b></sup>
+						<div class="text">SharePoint</div>
+						<span class="heading-full">Erbium</span>
+					</td>
+					<td class="el lathanide" id="69">
+						<span class="atomic-number">103</span>
+						<sup class="head"><b>Zg</b></sup>
+						<div class="text">Zendesk Guide</div>
+						<span class="heading-full">Thulium</span>
+					</td>
+					<td class="el lathanide" id="70">
+						<span class="atomic-number">104</span>
+						<sup class="head"><b>Gu</b></sup>
+						<div class="text">Guru</div>
+						<span class="heading-full">Ytterbium</span>
+					</td>
+					<td class="el lathanide" id="71">
+						<span class="atomic-number">105</span>
+						<sup class="head"><b>Bf</b></sup>
+						<div class="text">Bloomfire</div>
+						<span class="heading-full">Lutetium</span>
+					</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<th class="col2" colspan="2"></th>
+					<td class="el actinide" id="89">
+						<span class="atomic-number">106</span>
+						<sup class="head"><b>Ok</b></sup>
+						<div class="text">Okta</div>
+						<span class="heading-full">Actinium</span>
+					</td>
+					<td class="el actinide" id="90">
+						<span class="atomic-number">107</span>
+						<sup class="head"><b>Ol</b></sup>
+						<div class="text">OneLogin</div>
+						<span class="heading-full">Thorium</span>
+					</td>
+					<td class="el actinide" id="91">
+						<span class="atomic-number">108</span>
+						<sup class="head"><b>Sp</b></sup>
+						<div class="text">SailPoint</div>
+						<span class="heading-full">Protactinium</span>
+					</td>
+					<td class="el actinide" id="92">
+						<span class="atomic-number">109</span>
+						<sup class="head"><b>Rs</b></sup>
+						<div class="text">RSA SEcurID</div>
+						<span class="heading-full">Uranium</span>
+					</td>
+					<td class="el actinide" id="93">
+						<span class="atomic-number">110</span>
+						<sup class="head"><b>Ct</b></sup>
+						<div class="text">Centrify</div>
+						<span class="heading-full">Neptunium</span>
+					</td>
+					<td class="el actinide" id="94">
+						<span class="atomic-number">111</span>
+						<sup class="head"><b>Vn</b></sup>
+						<div class="text">Vectra</div>
+						<span class="heading-full">Plutonium</span>
+					</td>
+					<td class="el actinide" id="95">
+						<span class="atomic-number">112</span>
+						<sup class="head"><b>Tn</b></sup>
+						<div class="text">Tanium</div>
+						<span class="heading-full">Americium</span>
+					</td>
+					<td class="el actinide" id="96">
+						<span class="atomic-number">113</span>
+						<sup class="head"><b>Av</b></sup>
+						<div class="text">AlienVault</div>
+						<span class="heading-full">Curium</span>
+					</td>
+					<td class="el actinide" id="97">
+						<span class="atomic-number">114</span>
+						<sup class="head"><b>Sy</b></sup>
+						<div class="text">Symantec</div>
+						<span class="heading-full">Berkelium</span>
+					</td>
+					<td class="el actinide" id="98">
+						<span class="atomic-number">115</span>
+						<sup class="head"><b>Xb</b></sup>
+						<div class="text">Exabeam</div>
+						<span class="heading-full">Californium</span>
+					</td>
+					<td class="el actinide" id="99">
+						<span class="atomic-number">116</span>
+						<sup class="head"><b>Oit</b></sup>
+						<div class="text">ObserveIT</div>
+						<span class="heading-full">Einsteinium</span>
+					</td>
+					<td class="el actinide" id="100">
+						<span class="atomic-number">117</span>
+						<sup class="head"><b>As</b></sup>
+						<div class="text">Aspera</div>
+						<span class="heading-full">Fermium</span>
+					</td>
+					<td class="el actinide" id="101">
+						<span class="atomic-number">118</span>
+						<sup class="head"><b>Fx</b></sup>
+						<div class="text">Flexera</div>
+						<span class="heading-full">Mendelevium</span>
+					</td>
+					<td class="el actinide" id="102">
+						<span class="atomic-number">119</span>
+						<sup class="head"><b>Snw</b></sup>
+						<div class="text">Snow Software</div>
+						<span class="heading-full">Nobelium</span>
+					</td>
+					<td class="el actinide" id="103">
+						<span class="atomic-number">120</span>
+						<sup class="head"><b>Ce</b></sup>
+						<div class="text">Certero</div>
+						<span class="heading-full">Lawrencium</span>
+					</td>
+					<td></td>
+				</tr>
+			</table>
 
-        	</div>
+			<div class="periodic-table">
 
-            <div id="footer" class="footer">
-                <div class="centered">
-                    <p>Designed and built by <a href="http://sean.dunwoody.me">Sean Dunwoody</a></p>
-                </div>
-            </div>
-        </div>
+			</div>
 
-        <!-- build:js assets/js/default.min.js?v=2 -->
-        <script src="assets/js/responsive-nav.js"></script>
-        <script src="assets/js/ajax.js"></script>
-        <script src="assets/js/simple_tabs.js"></script>
-        <script src="assets/js/element.js"></script>
-        <script src="assets/js/search.js"></script>
-        <script src="assets/js/default.js"></script>
-        <!-- /build -->
-    </body>
+		</div>
+
+		<div id="footer" class="footer">
+			<div class="centered">
+				<p>Designed and built by <a href="http://sean.dunwoody.me">Sean Dunwoody</a></p>
+			</div>
+		</div>
+	</div>
+
+	<!-- build:js assets/js/default.min.js?v=2 -->
+	<script src="assets/js/responsive-nav.js"></script>
+	<script src="assets/js/ajax.js"></script>
+	<script src="assets/js/simple_tabs.js"></script>
+	<script src="assets/js/element.js"></script>
+	<script src="assets/js/search.js"></script>
+	<script src="assets/js/default.js"></script>
+	<!-- /build -->
+</body>
+
 </html>

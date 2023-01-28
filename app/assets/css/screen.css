@@ -1,98 +1,89 @@
-/*------------------------------------*\
-    #CSS Reset
-\*------------------------------------*/
-
-html, body, div, span, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, address, cite, code,
-img, ol, ul, li, fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
+a,
+body,
+div,
+h2,
+html,
+li,
+ol,
+p,
+span,
+table,
+tbody,
+td,
+th,
+thead,
+tr,
+ul {
     border: 0;
     font-size: 100%;
     font: inherit;
     margin: 0;
     padding: 0;
-    vertical-align: baseline;
+    vertical-align: baseline
 }
 
 body {
-    line-height: 1;
+    line-height: 1
 }
 
-ol, ul {
-    list-style: none;
+ol,
+ul {
+    list-style: none
 }
 
 table {
     border-collapse: collapse;
-    border-spacing: 0;
+    border-spacing: 0
 }
 
-/* apply a natural box layout model to all elements, but allowing components to change */
 html {
-    box-sizing: border-box;
+    box-sizing: border-box
 }
 
-*, *:before, *:after {
-    box-sizing: inherit;
+*,
+:after,
+:before {
+    box-sizing: inherit
 }
-
-
-
-
-
-/*------------------------------------*\
-    #Global
-\*------------------------------------*/
 
 html {
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: scroll
 }
 
 body {
     height: 100%;
-    font-family: arial;
+    font-family: arial
 }
 
 .v-align {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: middle
 }
 
 .centered {
     clear: both;
     margin: 0 auto;
-    width: 980px;
+    width: 980px
 }
-
-
-
-
-
-/*------------------------------------*\
-    #Global Layout
-\*------------------------------------*/
 
 #container {
     min-height: 100%;
-    position: relative;
+    position: relative
 }
 
 #wrapper {
-    padding: 10px 0 90px 0;
+    padding: 10px 0 90px 0
 }
-
 
 .page-content {
     line-height: 1.4;
-    padding: 1% 9%;
+    padding: 1% 9%
 }
 
 .page-content p {
-    margin: 20px 0;
+    margin: 20px 0
 }
-
 
 .footer {
     background: #eae6e6;
@@ -104,129 +95,112 @@ body {
     padding: 20px 0;
     position: absolute;
     text-align: center;
-    width: 100%;
+    width: 100%
 }
 
 .footer a {
     color: #000;
-    text-decoration: none;
+    text-decoration: none
 }
-
-
-
-
-
-/*------------------------------------*\
-    #Periodic Table
-\*------------------------------------*/
 
 .periodic-table {
     clear: both;
-    margin: 10px auto;
+    margin: 10px auto
 }
 
-    .periodic-table .heading {
-        font-size: 20px;
-        font-weight: bold;
-        margin: 5px 0;
-    }
+.periodic-table .heading {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 5px 0
+}
 
-    .periodic-table th {
-        font-weight: bold;
-    }
+.periodic-table th {
+    font-weight: 700
+}
 
-    .periodic-table th,
-    .periodic-table td {
-        border: 1px solid transparent;
-        float: left;
-        height: 46px;
-        margin: 1px;
-        padding: 3px;
-        width: 46px;
-    }
+.periodic-table td,
+.periodic-table th {
+    border: 1px solid transparent;
+    float: left;
+    height: 46px;
+    margin: 1px;
+    padding: 3px;
+    width: 46px
+}
 
-    .periodic-table thead th {
-        height: 41px;
-    }
+.periodic-table thead th {
+    height: 41px
+}
 
-    .periodic-table .col2 {
-        line-height: 40px;
-        margin: 1px 2px;
-        padding: 3px 12px 3px 0;
-        width: 80px;
-    }
-
+.periodic-table .col2 {
+    line-height: 40px;
+    margin: 1px 2px;
+    padding: 3px 12px 3px 0;
+    width: 80px
+}
 
 .el {
-    background: #d8d8d8;
+    background: #d8d8d8
 }
 
-    .key-list .el {
-        float: none;
-    }
+.key-list .el {
+    float: none
+}
 
-    .non-metal {
-        background: #68e841;
-    }
+.non-metal {
+    background: #68e841
+}
 
-    .noble-gas {
-        background: #b8c1de;
-    }
+.noble-gas {
+    background: #b8c1de
+}
 
-    .halogen {
-        background: #e7e5b0;
-    }
+.halogen {
+    background: #e7e5b0
+}
 
-    .alkali-metal {
-        background: #e79292;
-    }
+.alkali-metal {
+    background: #e79292
+}
 
-    .transition-metal {
-        background: #e7c4c4;
-    }
+.transition-metal {
+    background: #e7c4c4
+}
 
-    .metalloid {
-        background: #79a969;
-    }
+.metalloid {
+    background: #79a969
+}
 
-    .alkali-earth-metal {
-        background: #ffec4c;
-    }
+.alkali-earth-metal {
+    background: #ffec4c
+}
 
-    .post-transition-metal {
-        background: #90cba3;
-    }
+.post-transition-metal {
+    background: #90cba3
+}
 
-    .lathanide {
-        background: #ebb0ef;
-    }
+.lathanide {
+    background: #ebb0ef
+}
 
-    .actinide {
-        background: #d680db;
-    }
-
+.actinide {
+    background: #d680db
+}
 
 .key-list {
     margin: 5px 0;
-    overflow: hidden;
+    overflow: hidden
 }
 
 .key-list li {
     float: left;
     padding: 2px 5px;
-    width: 200px;
+    width: 200px
 }
 
-
-
-
-
-/*------------------------------------*\
-    #Responsive
-\*------------------------------------*/
-@media (min-width: 1200px) {
+@media (min-width:1200px) {
     .centered {
-        width: 1150px;
+        width: 1150px
     }
 
     .v-align {
@@ -234,84 +208,604 @@ body {
         display: table-cell;
         padding: 0 0 0 9px;
         vertical-align: middle;
-        height: 59px;
+        height: 59px
     }
 
-
-    .periodic-table th,
-    .periodic-table td {
+    .periodic-table td,
+    .periodic-table th {
         height: 58px;
-        width: 58px;
+        width: 58px
     }
 }
 
-
-@media (min-width: 1400px) {
+@media (min-width:1400px) {
     .centered {
-        width: 1368px;
+        width: 1368px
     }
 
     .v-align {
-        height: 69px;
+        height: 69px
     }
 
-
-    .periodic-table th,
-    .periodic-table td {
+    .periodic-table td,
+    .periodic-table th {
         height: 68px;
-        width: 70px;
+        width: 70px
     }
 
     .key-list li {
-        width: 182px;
+        width: 182px
     }
 }
 
-
-@media (max-width: 800px) {
+@media (max-width:800px) {
     .navigation-container {
         left: 0;
         position: fixed;
         right: 0;
         top: 0;
-        z-index: 1000;
+        z-index: 1000
     }
 
-        #main-nav {
-            margin: 6px 0;
-        }
+    #main-nav {
+        margin: 6px 0
+    }
 
-            #main-nav li {
-                display: block;
-            }
+    #main-nav li {
+        display: block
+    }
 
-            #main-nav .PageSelected a {
-                background-image: none;
-            }
+    #main-nav .PageSelected a {
+        background-image: none
+    }
 
-
-        #element-close {
-            top: 14px;
-        }
-
+    #element-close {
+        top: 14px
+    }
 
     #wrapper {
-        padding-top: 54px;
+        padding-top: 54px
     }
-
 
     .centered,
     .periodic-table {
-        width: 100%;
+        width: 100%
     }
 
-    .periodic-table th,
-    .periodic-table td {
-        display: none;
+    .periodic-table td,
+    .periodic-table th {
+        display: none
     }
 
     .key-list li {
         padding: 2px 0;
-        width: 100%;
+        width: 100%
+    }
+}
+
+.periodic-table .el {
+    border: 1px solid #999;
+    cursor: pointer;
+    float: left;
+    height: 46px;
+    margin: 1px;
+    padding: 3px;
+    position: relative;
+    transition: opacity .2s ease, border .2s ease, outline .2s ease;
+    width: 46px
+}
+
+.filtering-active .el {
+    opacity: .4
+}
+
+.periodic-table .el-highlighted {
+    opacity: 1
+}
+
+.el .atomic-number {
+    display: block;
+    font-size: 14px;
+    position: relative
+}
+
+.el .heading {
+    display: block;
+    font: bold 18px arial;
+    margin: 0
+}
+
+.heading-full {
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    top: auto;
+    width: 1px
+}
+
+.further-information {
+    background-color: inherit;
+    border: 1px solid #000;
+    bottom: 0;
+    color: #000;
+    cursor: auto;
+    display: block;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all .25s ease;
+    z-index: -1
+}
+
+.el-expanded .further-information {
+    bottom: -110px;
+    left: -110px;
+    opacity: 1;
+    right: -110px;
+    top: -110px;
+    z-index: 3
+}
+
+.el-expanded.tab-expanded .further-information {
+    left: -300px;
+    right: -300px
+}
+
+.el-expanded.tab-expanded .next {
+    display: none
+}
+
+.tabs-container {
+    bottom: 0;
+    position: absolute;
+    top: 0;
+    transition: all .25s ease;
+    width: 720px
+}
+
+.tab-container {
+    float: left;
+    height: 100%;
+    position: relative;
+    width: 50%
+}
+
+.tab-container-brief {
+    width: 285px
+}
+
+.tab-container-further {
+    background: rgba(0, 0, 0, .05);
+    float: none;
+    overflow: hidden;
+    width: auto
+}
+
+.arrow {
+    background: rgba(255, 255, 255, .4);
+    border: 0;
+    cursor: pointer;
+    display: block;
+    padding: 12px 12px 13px 12px;
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+.further-information .heading {
+    border-bottom: 1px solid #515151;
+    font-size: 25px;
+    margin-top: 5px;
+    padding: 0 38px 6px 12px
+}
+
+.further-information .content {
+    font-size: 13px;
+    line-height: 16px;
+    overflow: hidden;
+    padding: 3px 3px 6px 12px
+}
+
+.further-information .content p {
+    clear: both;
+    float: left;
+    margin: 4px 0
+}
+
+.explore-link {
+    background: #f5f5f5;
+    background: linear-gradient(top, #f5f5f5 19%, #d6d6e1 100%);
+    border-top: 1px solid #999;
+    bottom: 0;
+    color: inherit;
+    font-size: 14px;
+    left: 0;
+    opacity: .9;
+    padding: 8px 11px;
+    position: absolute;
+    right: 0;
+    text-align: center
+}
+
+.explore-link span {
+    background-image: url(/assets/img/wikipedia.jpg);
+    background-position: left center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    padding: 0 0 0 22px
+}
+
+.tab-content {
+    display: none;
+    height: 100%;
+    overflow: auto;
+    padding: 6px 20px 9px 18px
+}
+
+.tab-visible {
+    display: block
+}
+
+.further-information .tabs-container-inner {
+    height: 100%;
+    margin: 0;
+    padding: 0
+}
+
+.tabs-navigation {
+    border-bottom: 1px solid #515151;
+    overflow: hidden
+}
+
+.tabs-navigation li {
+    float: left
+}
+
+.tabs-navigation a {
+    color: #000;
+    display: block;
+    font-size: 15px;
+    padding: 12px 18px 12px 18px;
+    text-align: center;
+    text-decoration: none
+}
+
+.tabs-navigation .tab-selected {
+    border-bottom: 1px solid #515151
+}
+
+.tabs-content {
+    height: 85%
+}
+
+@media (max-width:1600px) and (min-width:800px) {
+    td:nth-of-type(1).el-expanded .further-information {
+        left: -10px;
+        right: -210px
+    }
+
+    td:nth-of-type(18).el-expanded .further-information {
+        left: -210px;
+        right: -10px
+    }
+
+    td:nth-of-type(2).el-expanded .further-information {
+        left: -81px;
+        right: -139px
+    }
+
+    td:nth-of-type(17).el-expanded .further-information {
+        left: -139px;
+        right: -81px
+    }
+}
+
+@media (max-width:800px) {
+    .navigation-container #element-close.visible {
+        display: none
+    }
+
+    .periodic-table .el {
+        display: block;
+        height: 100%;
+        margin: 3px;
+        max-height: 84px;
+        max-width: 84px;
+        padding: 12px;
+        transition: opacity .5s ease, border .5s ease, outline .5s ease;
+        width: 100%
+    }
+
+    .el .atomic-number {
+        font-size: 22px
+    }
+
+    .el .heading {
+        font-size: 30px
+    }
+
+    .filtering-active .el {
+        display: none
+    }
+
+    .periodic-table .el-highlighted {
+        display: block
+    }
+
+    .periodic-table .el:last-child {
+        margin-bottom: 0
+    }
+
+    .atomic-number {
+        padding: 0 3% 1% 3%
+    }
+
+    .el .heading {
+        padding: 6px 3% 6px 3%
+    }
+
+    .el-expanded .atomic-number,
+    .el-expanded>.heading {
+        display: none
+    }
+
+    .periodic-table .el-expanded {
+        max-height: 94%;
+        max-width: 60%
+    }
+
+    .el-expanded .further-information {
+        bottom: 0;
+        left: 0;
+        overflow: auto;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 3000
+    }
+
+    .tabs-container {
+        overflow: hidden;
+        position: relative;
+        width: 100%
+    }
+
+    .el-container,
+    .tab-container {
+        padding: 0 0 30px 0;
+        position: static;
+        width: 100%
+    }
+
+    .tabs-navigation li {
+        text-align: center;
+        width: 50%
+    }
+
+    .arrow {
+        font-size: 20px;
+        padding: 10px 22px 10px 22px
+    }
+
+    .arrow.next,
+    .arrow.prev {
+        display: none
+    }
+}
+
+@media (min-width:800px) {
+    .arrow.el-close {
+        display: none
+    }
+
+    .tabs-container {
+        width: 658px
+    }
+
+    .tab-container-brief {
+        width: 264px
+    }
+}
+
+@media (min-width:1200px) {
+    .periodic-table .heading {
+        font-size: 25px
+    }
+
+    .periodic-table .el {
+        border: 1px solid #999;
+        cursor: pointer;
+        float: left;
+        height: 58px;
+        margin: 1px;
+        padding: 3px;
+        position: relative;
+        width: 58px
+    }
+
+    .periodic-table .el-highlighted {
+        border-color: #000
+    }
+
+    .periodic-table .el-expanded,
+    .periodic-table .el:hover {
+        border-color: #000;
+        outline: 1px solid #000;
+        z-index: 2
+    }
+
+    .periodic-table .el-expanded,
+    .periodic-table .el-expanded:hover {
+        z-index: 3
+    }
+
+    .periodic-table .el-focus,
+    .periodic-table .el-focus:hover {
+        z-index: 4
+    }
+
+    .tabs-container {
+        width: 688px
+    }
+
+    .tab-container-brief {
+        width: 274px
+    }
+}
+
+@media (min-width:1400px) {
+    .periodic-table .heading {
+        font-size: 25px;
+        margin-top: 5px
+    }
+
+    .periodic-table .el {
+        height: 68px;
+        padding: 4px;
+        width: 70px
+    }
+
+    .el .atomic-number {
+        font-size: 17px
+    }
+
+    .tabs-container {
+        width: 720px
+    }
+
+    .tab-container-brief {
+        width: 285px
+    }
+}
+
+.navigation-container {
+    background: #eae6e6;
+    border-bottom: 1px solid #c2bcbc;
+    float: left;
+    width: 100%
+}
+
+.navigation-container-inner {
+    position: relative
+}
+
+#main-nav {
+    overflow: hidden;
+    text-align: left
+}
+
+#main-nav li {
+    display: inline-block
+}
+
+#main-nav a,
+.nav-toggle {
+    color: #525252;
+    display: block;
+    font: bold 16px arial;
+    margin: 0 10px;
+    padding: 18px 17px;
+    text-decoration: none
+}
+
+#main-nav .PageSelected a,
+#main-nav a:hover {
+    color: #000
+}
+
+#main-nav .PageSelected a {
+    border-top: 8px solid #c2bcbc;
+    padding-top: 10px
+}
+
+#element-close {
+    background: #cac4c4;
+    border-radius: 6px;
+    color: #111;
+    display: none;
+    left: 50%;
+    margin: 0 0 0 -95px;
+    padding: 7px 10px;
+    position: absolute;
+    text-decoration: none;
+    top: 13px
+}
+
+#element-close.visible {
+    display: block
+}
+
+.js .nav-collapse {
+    clip: rect(0 0 0 0);
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    zoom: 1
+}
+
+.nav-collapse.opened {
+    max-height: 9999px
+}
+
+.disable-pointer-events {
+    pointer-events: none !important
+}
+
+.nav-toggle {
+    -webkit-tap-highlight-color: transparent
+}
+
+@media screen and (min-width:800px) {
+    .js .nav-collapse {
+        position: relative
+    }
+
+    .js .nav-collapse.closed {
+        max-height: none
+    }
+
+    .nav-toggle {
+        display: none
+    }
+}
+
+@media screen and (max-width:800px) {
+    .nav-collapse ul {
+        display: block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%
+    }
+
+    .nav-collapse li {
+        display: block;
+        width: 100%
+    }
+}
+
+.table-search {
+    background: #efefef;
+    border: 3px solid #c2bcbc;
+    color: #555;
+    padding: 8px 12px;
+    position: absolute;
+    right: 10px;
+    width: 200px;
+    top: 9px
+}
+
+.table-search:focus {
+    background: #fff
+}
+
+@media (min-width:800px) {
+    .table-search {
+        right: 0;
+        width: 300px
     }
 }
